@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap");
+body{
+    margin: 0;
+}
+*{
+    
+    font-family: "Lobster Two";
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+video{
+    height: 35vh;
+}
+.videos{
+    background-color: white;
+    width: 30%;
+    height: 45vh;
+    margin: 1rem auto;
+}
+.video-container{
+    height: 100vh;
+    background-color: beige;
+    display: flex;
+    flex-wrap: wrap;
+}
+.videos h2{
+    margin: 1rem 2rem;
+}

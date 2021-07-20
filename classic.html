@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <section id="music">
+        <h1></h1>
+    <div><button class="btn" id="prev" onclick="prev()"><i class="fa fa-step-backward"></i></button>
+        <button class="btn" id="btn1" onclick="playPause()"><i class="fa fa-play"></i></button>
+        <button class="btn" id="next" onclick="next()"><i class="fa fa-step-forward"></i></button></div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/5f1318dd38.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        var title = document.querySelector("h1");
+        var playStatus = false;
+        var track = document.createElement('audio');
+        var index_no = 0;
+        var playBtn = document.querySelector("#btn1");
+        let tracks = [
+        {            trackcSrc: "assets/mp3/aaj2.mp3",
+            trackArt: "url('/assets/images/aaj.jpg')",
+            trackName: "Aaj Mausam Bada Beimaan ",
+        },
+        {trackcSrc: "assets/mp3/rooth.mp3",
+            trackArt: "url('/assets/images/rooth.jpg')",
+            trackName: "Rooth Kar Hamse Kabhi",
+        },
+             {            trackcSrc: "assets/mp3/1j.mp3",
+            trackArt: "url('/assets/images/merageet.jpg')",
+            trackName: "Hothon Se Chhu Lo Tum",
+        },
+         {
+            trackcSrc: "assets/mp3/jheel.mp3",
+            trackArt: "url('/assets/images/jheel.jpg')",
+            trackName: "Chal Chale aye dil chale",
+        },
+         {
+            trackcSrc: "assets/mp3/cgup.mp3",
+            trackArt: "url('/assets/images/chupke.jpg')",
+            trackName: "Chupke chupke",
+        },
+        ];
+        function loadTrack(index_no){
+            track.src=tracks[index_no].trackcSrc;
+            let art = tracks[index_no].trackArt;
+        document.documentElement.style.setProperty("--cover", art);
+        title.innerHTML = tracks[index_no].trackName;
+            track.load();
+        };
+        loadTrack(index_no);
+
+        function playPause(){
+            if(playStatus == false){
+                playSong();
+            }else{
+                pauseSong();
+            }
+        }
+        function playSong(){
+            track.play();
+            playStatus = true;
+            playBtn.innerHTML = '<i class="fa fa-pause"></i>';
+        }
+        function pauseSong(){
+            track.pause();
+            playStatus = false;
+            playBtn.innerHTML = '<i class="fa fa-play"></i>';
+        }
+        function next(){
+            if(index_no < tracks.length-1){
+                index_no+=1;
+                loadTrack(index_no);
+                track.play();
+                playBtn.innerHTML = '<i class="fa fa-pause"></i>'
+            }else{
+                index_no=0;
+                loadTrack(index_no);
+                track.play();
+
+            }
+        }
+        function prev(){
+            if(index_no > tracks.length- 3){
+                index_no-=1;
+                loadTrack(index_no);
+                track.play();
+            }else{
+                index_no=0;
+                loadTrack(index_no);
+                track.play();
+
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap");
+body{
+    margin: 0;
+}
+*{
+    
+    font-family: "Lobster Two";
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+section{
+    height: 100vh;
+    background: url(/assets/images/backg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.nav{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.534), rgba(0, 0, 0, 0.336));
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.audio{
+    margin: auto;
+        color: white;
+        font-size: 5rem;
+}
+.cards{
+    margin: 0 5rem;
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+}
+.links a{
+    height: 25vh;
+    width: 50%;
+    color: white;
+    text-decoration: none;
+}
+.cards h1{
+    font-size: 2rem;
+}

@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap");
+*:focus {
+  outline: none;
+}
+:root {
+  --cover: "  ";
+}
+body {
+  margin: 0;
+}
+#music {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.418), black);
+}
+#music::before {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+  filter: blur(0.3rem);
+  background: var(--cover);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.btn {
+  color: white;
+  font-size: 1.5rem;
+  padding: 2rem;
+  margin: 1rem 2rem;
+  border: none;
+  border-radius: 5rem;
+  background-color: rgba(255, 255, 255, 0.133);
+  transition: all linear 300ms;
+}
+.btn:active,
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.083);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.397);
+}
+.progr {
+  position: relative;
+  height: 2rem;
+  background-color: white;
+  width: 0px;
+}
+.progr::before {
+  content: "";
+  top: 0;
+  position: absolute;
+  background-color: black;
+  height: 2rem;
+  width: 50px;
+}
+nav {
+  align-self: center;
+}
+.songs {
+  display: block;
+  padding: 1rem 2rem;
+}
+h1 {
+  font-size: 2rem;
+  font-family: "Lobster Two";
+  color: white;
+}
